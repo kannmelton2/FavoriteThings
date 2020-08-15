@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FavoriteThings.Things
 {
-    class Book
+    abstract class Book
     {
         // properties
         public string Title { get; set; }
@@ -12,6 +12,15 @@ namespace FavoriteThings.Things
         public bool IsOwned { get; set; }
         public int YearRead { get; set; }
         public int Rating { get; set; }
+
+        // constructor
+        public Book(string title, string author, int yearRead, int rating)
+        {
+            Author = author;
+            Title = title;
+            YearRead = yearRead;
+            Rating = rating;
+        }
 
         // methods
         public void StartABookClub()
@@ -22,6 +31,11 @@ namespace FavoriteThings.Things
         public void ReadBook()
         {
             Console.WriteLine($"Go Read {Title} by {Author}");
+        }
+
+        public virtual void Learn()
+        {
+            Console.WriteLine("What lesson did you learn from this book?");
         }
 
     }

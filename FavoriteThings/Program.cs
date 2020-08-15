@@ -1,4 +1,5 @@
 ﻿using FavoriteThings.Things;
+using FavoriteThings.Things.Books;
 using System;
 
 namespace FavoriteThings
@@ -9,28 +10,23 @@ namespace FavoriteThings
         {
             // BOOK BOOK BOOK
             // book 1
-            var nightCircus = new Book
+            var nightCircus = new FantasyBook("The Night Circus", "Erin Morgenstern", 2018, 5)
             {
-                Title = "The Night Circus",
-                Author = "Erin Morgenstern",
-                YearRead = 2018,
-                Rating = 5,
                 IsOwned = true,
+                World = "Earth"
             };
 
             // book 2
-            var goodOmens = new Book
+            var goodOmens = new FantasyBook("Good Omens", "Neil Gaiman and Terry Pratchett", 2020, 5)
             {
-                Title = "Good Omens",
-                Author = "Neil Gaiman and Terry Pratchett",
-                YearRead = 2020,
-                Rating = 5,
                 IsOwned = true,
+                World = "Earth"
             };
 
             // call methods from Book Class on book 1 & 2
             nightCircus.StartABookClub();
             goodOmens.ReadBook();
+            nightCircus.Learn();
 
 
             // HOBBY HOBBY HOBBY
