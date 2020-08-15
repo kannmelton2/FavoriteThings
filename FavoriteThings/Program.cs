@@ -1,5 +1,7 @@
 ﻿using FavoriteThings.Things;
 using FavoriteThings.Things.Books;
+using FavoriteThings.Things.Hobbies;
+using FavoriteThings.Things.Snacks;
 using System;
 
 namespace FavoriteThings
@@ -23,55 +25,88 @@ namespace FavoriteThings
                 World = "Earth"
             };
 
+            // book 3
+            var besomStangAndSword = new NonFictionBook("Besom, Stang & Sword", "Christopher Orapello and Tara-Love Maguire", 2020, 4)
+            {
+                IsOwned = true,
+                WasInteresting = true,
+                IsPrimarySource = true,
+                Topic = "Witchcraft"
+            };
+
             // call methods from Book Class on book 1 & 2
             nightCircus.StartABookClub();
             goodOmens.ReadBook();
             nightCircus.Learn();
-
+            besomStangAndSword.Learn();
+            Console.WriteLine(new string('-', 50));
 
             // HOBBY HOBBY HOBBY
             // hobby 1
-            var painting = new Hobby("painting");
+            var painting = new ArtisticHobby("painting", SkillLevel.MidLevel)
+            {
+                ArtType = ArtType.Visual
+            };
 
             // hobby 2
-            var archery = new Hobby("archery");
+            var archery = new SportHobby("archery", SkillLevel.Beginner)
+            { 
+                Equipment = "bow and arrows"
+            };
 
-            // assign a type and a level to each hobby
-            // hobby 1
-            painting.HobbyType = Things.Type.Artistic;
-            painting.Level = Skill.MidLevel;
-
-            // hobby 2
-            archery.HobbyType = Things.Type.PhysicalActivity;
-            archery.Level = Skill.Beginner;
+            // hobby 3
+            var plannering = new CraftHobby("art planning", SkillLevel.Amatuer)
+            { 
+                Tools = "pens, washi tape, and highlighters"
+            };
 
             // use a method from the Hobby Class on an instance
-            painting.LevelUp();
+            painting.Levels();
             archery.DoTheHobby();
+            painting.MakeMoney();
+            plannering.UpgradeTools();
+            plannering.DoTheHobby();
+            plannering.UpgradeTools();
+            Console.WriteLine(new string('-', 50));
+
+
+
 
 
             // SNACK SNACK SNACK
             // snack 1
-            var pie = new Snack
+            var pie = new DessertSnack
             {
                 Name = "Cherry Pie",
-                isHot = true,
-                MainInregredient = "cherries",
-                Flavor = Flavour.Sweet
+                MainInregredient = "Cherries",
+                Flavor = Flavour.Sweet,
             };
 
             // snack 2
-            var roastedChickpeas = new Snack
+            var parmZucchini = new VeggieSnack
             {
-                Name = "Roasted Chickpeas",
-                isHealthy = true,
-                MainInregredient = "Chickpeas",
+                Name = "Parmesan Crusted Zucchini",
+                IsHealthy = true,
+                MainInregredient = "Zucchini",
                 Flavor = Flavour.Savory
+            };
+
+            // snack 3
+            var pineapple = new FruitSnack
+            {
+                Name = "Pineapple",
+                IsHealthy = true,
+                MainInregredient = "Pineapple",
+                Flavor = Flavour.Sweet,
+                IsPineapple = true,
             };
 
             // call methods for Snacks
             pie.EatSnack();
-            roastedChickpeas.MakeSnack();
+            parmZucchini.MakeSnack();
+            pineapple.EatsYouBack();
+            pineapple.EatSnack();
+            Console.WriteLine(new string('-', 50));
 
             // CHAPSTICK CHAPSTICK CHAPSTICK
             // chapstick 1

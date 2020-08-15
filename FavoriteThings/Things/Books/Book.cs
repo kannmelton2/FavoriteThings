@@ -35,7 +35,7 @@ namespace FavoriteThings.Things
 
         public virtual void Learn()
         {
-            Console.WriteLine("What lesson did you learn from this book?");
+            Console.WriteLine($"What lesson did you learn from {Title}?");
         }
 
     }
