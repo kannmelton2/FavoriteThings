@@ -1,5 +1,6 @@
 ﻿using FavoriteThings.Things;
 using FavoriteThings.Things.Books;
+using FavoriteThings.Things.Chapsticks;
 using FavoriteThings.Things.Hobbies;
 using FavoriteThings.Things.Snacks;
 using System;
@@ -110,14 +111,20 @@ namespace FavoriteThings
 
             // CHAPSTICK CHAPSTICK CHAPSTICK
             // chapstick 1
-            var burtsBees = new Chapstick("Burt's Bees", true);
+            var burtsBees = new UnflavoredChapstick("Burt's Bees");
 
             // chapstick 2
-            var cucumber = new Chapstick("Burt's Bees", true);
+            var cucumber = new FlavoredChapstick("Burt's Bees", false);
+
+            // chaptstick 3
+            var pink = new TintedChapstick("EOS")
+            {
+                Color = "pink"
+            };
 
             // methods
-            cucumber.WhatFlavor();
-            Console.WriteLine($"Your {cucumber.Brand} chapstick is {cucumber.Flavor}.");
+            pink.WhatFlavor();
+            Console.WriteLine($"Your {pink.Brand} chapstick is {pink.Flavor}.");
             burtsBees.ApplyChapstick();
 
         }

@@ -4,18 +4,20 @@ using System.Text;
 
 namespace FavoriteThings.Things
 {
-    class Chapstick
+    abstract class Chapstick
     {
         // properties
         public string Brand { get; set; }
-        public bool IsFlavored { get; set; }
+        public bool IsFlavored { get; }
+        public bool IsTinted { get;  }
         public string Flavor { get; set;  }
 
         // constructor
-        public Chapstick(string brand, bool isFlavored)
+        public Chapstick(string brand, bool isFlavored, bool isTinted)
         {
             Brand = brand;
             IsFlavored = isFlavored;
+            IsTinted = isTinted;
         }
 
         // methods
